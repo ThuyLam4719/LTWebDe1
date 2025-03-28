@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Khách Hàng</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <h1>Danh sách khách hàng</h1>
+        Chọn Quốc gia:
+        <select name="quocgia" id="quocgia" onchange="loadCustomers()">
+            <option value="TatCa">Tat ca</option>
+            <option value="Vietnam">Vietnam</option>
+            <option value="USA">USA</option>
+            <option value="Khac">Khác</option>
+        </select>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Tên khách hàng</th>
+                    <th>Địa chỉ Email</th>
+                    <th>Năm sinh</th>
+                    <th>Quốc gia</th>
+                </tr>
+            </thead>
+            <tbody id="custumerList">
+                <!-- Dữ liệu từ AJAX sẽ được hiển thị ở đây -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function loadCustomers() {
+            var quocgia = document.getElementById("quocgia").value;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "khachhang.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("custumerList").innerHTML = xhr.responseText;
+                }
+            };
+
+            xhr.send("quocgia=" + encodeURIComponent(quocgia));
+        }
+
+        // Tải dữ liệu ngay khi trang vừa load
+        window.onload = loadCustomers;
+        document.getElementById("category").addEventListener("change", loadShoes);
+
+    </script>
+</body>
+
+</html>
