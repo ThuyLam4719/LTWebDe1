@@ -4,8 +4,17 @@ body {
     justify-content: center;
 }
 
+div {
+    border: 1px solid black;
+
+}
+
 input,
 select,
 button {
     margin: 5px;
+}
+
+a {
+    text-decoration: none;
 }

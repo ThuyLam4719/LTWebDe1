@@ -22,14 +22,15 @@ if(isset($_POST['submit'])){
 
     if($result->num_rows == 1){
         $_SESSION['email'] = $email;
-        echo "<script> alert('Hien thi thong tin') </script>";
+        header("Location: thongtin.php");
+        echo "dang nhap thanh cong";
     } else{
-        echo "Sai eamil hoac mat khau!";
+        echo "Sai email hoac mat khau!";
     }
 
 }
 
-$mysql->close();
+$mysql->close(); //Dong ket noi CSDL khi da hoan thanh
 
 ?>
 
