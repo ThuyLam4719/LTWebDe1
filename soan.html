@@ -9,11 +9,22 @@
 
 <body>
     <div>
-        <h1>Thong tin nguoi dung</h1>
-        <p>Ho ten: </p>
-        <p>Dia chi email: </p>
-        <p>Nam sinh: </p>
-        <p>Gioi tinh: </p>
+        <h1>Cap nhat thong tin</h1>
+        <form method="post">
+            Ho ten: <input type="text" name="ten" value="<?php echo $ten; ?>" /> <br>\
+            Dia chi Email: <input type="text" name="email" value="<?php echo $email ?>" /> <br>
+            Nam sinh: <input type="namsinh" name="namsinh">
+            <select name="namsinh" id="namsinh">
+                <script>
+                    for (let i = 1990; i <= 2020; i++) {
+                        document.write(`<option value="${i}"> ${i} </option>`)
+                    }
+                </script>
+            </select>
+            Quoc gia: <input type="text" name="quocgia" value="<?php echo $quocgia ?>">
+
+
+        </form>
     </div>
 </body>
 

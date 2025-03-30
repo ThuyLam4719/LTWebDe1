@@ -41,6 +41,7 @@ $user = $stmt->get_result()->fetch_assoc();
         <p>Nam sinh: <?php echo $user['namsinh'] ?></p>
         <p>Quoc gia: <?php echo $user['quocgia'] ?></p>
         <button > <a href="dangxuat.php"> Dang xuat </a> </button>
+        <button> <a href="capnhat.php"> Cap nhat </a> </button>
     </div>
 </body>
 

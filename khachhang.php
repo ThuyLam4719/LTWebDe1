@@ -32,7 +32,7 @@ while ($row = $result->fetch_assoc()){
     <td>{$row['namsinh']}</td>
     <td>{$row['quocgia']}</td>
 </tr>";
-}
+}   
 echo $output;
 
 $stmt->close();

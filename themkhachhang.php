@@ -34,15 +34,14 @@ if(isset($_POST['submit'])){
             $stmt->bind_param("sssis", $makh,$ten,$email,$namsinh,$quocgia);
             if($stmt->execute()){
                 $_SESSION['customerCount']++;
-                echo "<script>alert(\"Đã thêm khách hàng thành công!\\nMật khẩu của người dùng: $makh\\nTong so nhan vien da them trong phien lam viec nay: {$_SESSION['customerCount']}\");</script>";            } else{
-                echo "Loi: " . $stmt->error;;
+                echo "<script>alert(\"Đã thêm khách hàng thành công!\\nMật khẩu của người dùng: $makh\\nTong so nhan vien da them trong phien lam viec nay: {$_SESSION['customerCount']}\");</script>";            
+            } else{
+                echo "Loi: " . $stmt->error;
             }
             $stmt->close();
         }      
 
 }
-
-
 
 $mysql->close();
 
